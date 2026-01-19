@@ -1,0 +1,11 @@
+### fr0gger's notes on how to use powershell to use environment variables for openai api key
+
+# set an environment variable (more secure way to handle API keys in code)
+# you may need to restart vscode & terminal to pick up the new env variable
+$env:OPENAI_API_KEY = "<your api key>"
+
+# to list all variables or just the new variable
+Get-ChildItem Env: OR Get-ChildItem Env: | Where-Object { $_.Name -like "OPENAI_*" }
+
+# to remove the new variable:
+Remove-Item Env:OPENAI_API_KEY

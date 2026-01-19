@@ -1,0 +1,561 @@
+Libraries,API,GPT Verdict
+kernel32.dll,GetACP,"The purpose of this API is to retrieve the current system's ANSI code page identifier. This information can be used by applications to properly display non-Unicode text on a computer.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in conjunction with other techniques for malicious purposes, such as being leveraged by an attacker to identify the language settings of a system and determine the best method for delivering localized malware or social engineering attacks.
+"
+kernel32.dll,GetExitCodeProcess,"The purpose of this API is to retrieve the exit code of a specific process from the Windows kernel. It can be used by developers to determine if a process has completed successfully or not.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a standard function within the Windows kernel and does not have any malicious intent on its own. However, it could potentially be used in conjunction with other techniques for post-exploitation activities, such as checking if a malicious process has successfully executed or terminated.
+"
+kernel32.dll,LocalFree,"The purpose of this API is to free a block of local memory that was previously allocated by the process using the LocalAlloc function. This can help optimize memory usage and prevent memory leaks.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it serves a general purpose for managing memory in Windows systems. However, an attacker may potentially use this API as part of their techniques for evading detection or hiding malicious code within legitimate processes.
+"
+kernel32.dll,CloseHandle,"The purpose of this API is to close a handle to an object, such as a file or device, in the Windows kernel32.dll library. This API can be used for managing resources and freeing up memory in applications.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it may be used by attackers as part of process injection techniques or privilege escalation methods.
+"
+kernel32.dll,SizeofResource,"The purpose of this API is to retrieve the size of a resource within the kernel32.dll file. This can be used by developers to ensure that enough memory is allocated for the resource, or by security researchers to analyze potential vulnerabilities in the kernel32.dll file.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it does not involve any malicious activity or exploitation. However, it could potentially be used in conjunction with other techniques such as DLL side-loading (Tactic: Defense Evasion) or Process Injection (Tactic: Privilege Escalation).
+"
+kernel32.dll,VirtualProtect,"The purpose of this API is to allow developers to dynamically change the protection settings for a section of memory in a Windows application. This can be useful for implementing security measures such as code obfuscation or anti-debugging techniques.
+
+There are several MITRE ATT&CK techniques associated with this API, including:
+
+- T1055: Process Injection
+- T1183: Image File Execution Options Injection
+- T1140: Deobfuscate/Decode Files or Information
+
+This API can be used by attackers to inject malicious code into legitimate processes, evade detection by security tools, and manipulate memory protections to bypass security measures.
+"
+kernel32.dll,VirtualFree,"The purpose of this API is to free a region of memory that was previously allocated using the VirtualAlloc function. This can be useful for managing memory resources in an application.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a standard Windows function and does not have any malicious or defensive implications on its own. However, it could potentially be used by attackers to manipulate memory in order to evade detection or perform other malicious actions.
+"
+kernel32.dll,GetFullPathNameW,"The purpose of this API is to retrieve the full path name for a given file or directory. This can be useful for various functions such as checking if a file exists, opening files, or performing operations on files.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in techniques related to file and directory discovery (T1083) or execution through APIs (T1106).
+"
+kernel32.dll,ExitProcess,"The purpose of this API is to terminate a process. It is commonly used in software development to end a program or application. There is no specific MITRE ATT&CK technique associated with this API, as it is a legitimate function and not considered malicious in itself. However, it can potentially be abused by attackers for unauthorized termination of processes on an infected system.
+"
+kernel32.dll,HeapAlloc,"The purpose of this API is to allocate a block of memory from the heap. This allows programs to dynamically manage their memory usage at runtime.
+
+There is no specific MITRE ATT&CK technique associated with 'kernel32.dll': b'HeapAlloc'. However, an attacker may use this function as part of heap spraying techniques in order to exploit vulnerabilities and execute malicious code on a system.
+"
+kernel32.dll,GetCPInfoExW,"The purpose of this API, 'kernel32.dll': b'GetCPInfoExW', is to retrieve information about the current code page and character set used by the system. This includes data such as the number of characters in the code page, whether it supports Unicode, and other language-specific settings.
+
+There is no specific MITRE ATT&CK technique associated with this particular API. However, it could potentially be used as part of a wider attack leveraging techniques such as Process Injection or Code Signing to manipulate system settings or perform malicious actions on a targeted system.
+"
+kernel32.dll,RtlUnwind,"The purpose of this API is to provide functions for managing the Windows kernel. It is used to handle exceptions and unwind the call stack during exception handling.
+
+There are several MITRE ATT&CK techniques associated with this API, including:
+
+1. T1055 - Process Injection: This technique involves injecting malicious code into a legitimate process in order to evade detection. The 'RtlUnwind' function can be used as part of process injection to manipulate the call stack and execute malicious code.
+
+2. T1003 - Credential Dumping: This technique involves obtaining account login credentials from the operating system or applications running on it. The 'RtlUnwind' function can be used to access sensitive information stored in memory, such as passwords or authentication tokens.
+
+3. T1057 - Process Discovery: This technique involves gathering information about processes running on a system in order to identify potential targets for exploitation or lateral movement. The 'kernel32.dll' module can be queried using this API to gather information about loaded processes on the system.
+
+4. T1106 - Native Command-Line Interface: This technique involves executing commands directly via command-line interfaces (CLIs) provided by an operating system or application platforms, rather than through APIs or other methods that may not be accessible from all userspace contexts.The RtlUnwind function can also be called directly from a CLI, making it useful for attackers looking to bypass security controls and perform privileged actions without being detected.
+"
+kernel32.dll,GetCPInfo,"The purpose of this API is to retrieve information about the code page used by the operating system. This includes the number of characters in the currently installed code page, as well as additional details such as whether or not it supports double-byte character sets.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used by an attacker for reconnaissance purposes, such as determining the language settings and capabilities of a targeted system.
+"
+kernel32.dll,GetStdHandle,"The purpose of this API is to retrieve a handle to the standard input, output, or error device for a console application. This allows the application to read from and write to these devices.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it may be used by an attacker as part of techniques such as command-line interface (CLI) execution (T1059), process injection (T1055), or file and directory discovery (T1083).
+"
+kernel32.dll,GetModuleHandleW,"The purpose of this API is to retrieve a handle for a specified module (DLL) that is currently loaded in memory. This can be used by programmers to access functions and data within the DLL.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a commonly used function in Windows operating systems and does not have any malicious intent on its own. However, it may be used by attackers as part of techniques such as Process Injection or Code Signing Manipulation to hide their malicious code within legitimate processes.
+"
+kernel32.dll,FreeLibrary,"The purpose of this API is to free a previously loaded dynamic-link library (DLL) module from the calling process's address space. This can be used to remove DLLs that are no longer needed or in use by the process.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of other techniques such as Process Injection or Defense Evasion. By unloading DLLs, an attacker may attempt to hide their presence on the system and evade detection by security tools.
+"
+kernel32.dll,HeapDestroy,"The purpose of this API is to destroy a heap object in the kernel32.dll library. This can be used to free up memory resources and prevent potential memory leaks.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it may be used within other techniques such as ""DLL Search Order Hijacking"" or ""Process Injection"".
+"
+kernel32.dll,ReadFile,"The purpose of this API is to read data from a file in the Windows operating system. This can be used by programs to access and process data stored in files on the computer.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a commonly used function within the Windows kernel32.dll library. However, it could potentially be utilized by an attacker for techniques such as Data Staged or Exfiltration Over Alternative Protocol if they are able to exploit vulnerabilities or gain unauthorized access to the system.
+"
+kernel32.dll,CreateProcessW,"The purpose of this API is to allow a program to create a new process. It is used for launching other programs or processes from within an existing one.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it can be used by legitimate programs and does not necessarily indicate malicious activity. However, it could potentially be abused by malware in order to execute additional malicious processes on the system.
+"
+kernel32.dll,GetLastError,"The purpose of this API is to retrieve the error code for the last failed operation in a Windows system. This can be used by developers to troubleshoot errors and handle them accordingly.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a standard function within the kernel32.dll library and does not have any malicious intent or behavior. However, it could potentially be used in conjunction with other techniques to gather information about system errors and vulnerabilities.
+"
+kernel32.dll,GetModuleFileNameW,"The purpose of this API is to retrieve the file name and path of the current module. It is associated with MITRE ATT&CK technique T1033 - System Service Discovery, as it can be used by an attacker to gather information about system services and their locations for potential exploitation.
+"
+kernel32.dll,SetLastError,"The purpose of this API is to set the last-error code for the calling thread. This allows an application to determine why a function call failed.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a commonly used Windows API and does not have any malicious intent on its own. However, it can be used by attackers in combination with other techniques to hide their activities and evade detection. For example, an attacker may use this API to manipulate error codes and bypass security measures that rely on them for validation.
+"
+kernel32.dll,FindResourceW,"The purpose of this API is to locate and retrieve a resource (such as an image, icon, or string) from within a Windows executable file. It is commonly used by software developers to access resources embedded in their applications.
+
+There is no specific MITRE ATT&CK technique associated with 'FindResourceW' since it is a legitimate API function and does not involve any malicious activity. However, adversaries may potentially use this function as part of code injection techniques or for DLL hijacking attacks.
+"
+kernel32.dll,CreateThread,"The purpose of this API is to create a new thread within the Windows kernel. This can be used by software developers to run code in parallel and improve system performance.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a legitimate and commonly used function. However, malicious actors may use this API for process injection or creating covert communication channels, which could potentially fall under techniques such as T1055 (Process Injection) or T1001 (Data Obfuscation).
+"
+kernel32.dll,CompareStringW,"The purpose of this API is to compare two strings and determine if they are equal or not. This can be used for various purposes such as sorting, searching, and data validation.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in techniques related to string manipulation or comparison, such as T1132 - Data Encoding and T1119 - Automated Collection.
+"
+kernel32.dll,LoadLibraryA,"The purpose of this API is to load a dynamic-link library (DLL) into the memory of a running process. This allows the process to access functions and resources from the DLL.
+
+There is no specific MITRE ATT&CK technique associated with 'kernel32.dll': b'LoadLibraryA'. However, it could potentially be used in conjunction with other techniques for code injection or loading malicious DLLs into a process, which could be part of an attack.
+"
+kernel32.dll,ResetEvent,"The purpose of this API is to reset an event object, which can be used for synchronization between threads or processes in a Windows environment. It allows for communication and coordination between different parts of an application.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a legitimate function within the Windows operating system. However, it could potentially be used by threat actors as part of malicious code execution or process injection techniques.
+"
+kernel32.dll,GetVersion,"The purpose of this API is to retrieve information about the version of the Windows operating system that is currently running. It can be used by applications or malware to determine if a particular exploit or attack will work on the target system.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques such as System Information Discovery (T1082) or Exploitation for Privilege Escalation (T1068).
+"
+kernel32.dll,RaiseException,"The purpose of this API is to generate a software exception, which can be used for debugging and error handling purposes in Windows operating systems. It allows developers to control the flow of execution when an unexpected or abnormal condition occurs.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a legitimate function that can be used by both malicious and non-malicious programs. However, attackers may potentially use this function to trigger errors or crashes in order to disrupt system operations or evade detection by security tools.
+"
+kernel32.dll,FormatMessageW,"The purpose of this API is to retrieve a formatted message from the Windows system based on a given error code. This can be used for troubleshooting and debugging purposes.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a standard function within the kernel32.dll library and does not involve any malicious or unauthorized activity. However, it could potentially be used by an attacker in conjunction with other techniques to gather information about the system or manipulate error messages for social engineering purposes.
+"
+kernel32.dll,SwitchToThread,"The purpose of this API is to allow a thread to temporarily yield execution to another ready thread in the same process. This can be useful for improving performance and managing resource utilization.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of an evasion or anti-analysis technique by malware. By using SwitchToThread, a malicious program could avoid detection by security tools that rely on thread scheduling behavior for detection purposes.
+"
+kernel32.dll,GetExitCodeThread,"The purpose of this API is to retrieve the exit code of a thread within the Kernel32.dll library. This can be used for error handling or determining the status of a thread's execution.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a commonly used function in Windows operating systems and does not have any malicious intent on its own. However, it could potentially be used by adversaries for process monitoring and manipulation (T1057) or privilege escalation (T1088).
+"
+kernel32.dll,GetCurrentThread,"The purpose of this API is to retrieve the handle of the currently executing thread. It is commonly used in programming for multithreading and synchronization purposes.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used by an attacker as part of a process injection technique, such as DLL injection or reflective DLL loading. In these cases, the attacker would use GetCurrentThread to gain access to a legitimate process's memory space and inject malicious code into it. This could allow them to bypass security controls and execute their malicious code within a trusted process.
+"
+kernel32.dll,LoadLibraryExW,"The purpose of this API is to load a specified dynamic-link library (DLL) into the address space of the calling process. This allows programs to access functions and resources from external libraries.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common system call used by many legitimate programs. However, attackers may use this API for DLL injection techniques in order to bypass security measures and gain unauthorized access to a system. This can be categorized under the ""T1055 - Process Injection"" technique in the MITRE ATT&CK framework.
+"
+kernel32.dll,LockResource,"The purpose of this API is to lock a resource in memory so that it cannot be modified by other processes. This can be useful for ensuring the integrity and security of critical resources.
+
+There is not a specific MITRE ATT&CK technique associated with 'LockResource' as it is a basic function used in Windows programming and does not have any direct security implications. However, it may be used as part of an overall defense strategy against techniques such as Process Injection (T1055) or DLL Search Order Hijacking (T1038).
+"
+kernel32.dll,GetCurrentThreadId,"The purpose of this API is to retrieve the current thread ID for a specific process in Windows. This can be useful for debugging and monitoring purposes.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of other techniques such as Process Injection or Thread Execution Hijacking.
+"
+kernel32.dll,UnhandledExceptionFilter,"The purpose of this API is to handle unhandled exceptions in the Windows operating system. It is used to catch and process any errors that occur during program execution, allowing developers to handle them appropriately.
+
+There are a few MITRE ATT&CK techniques associated with this API, including T1055 (Process Injection) and T1187 (Forced Authentication). These techniques involve using UnhandledExceptionFilter as a means of injecting code into a legitimate process or forcing authentication in order to bypass security measures.
+"
+kernel32.dll,VirtualQuery,"The purpose of this API is to retrieve information about a specific memory address or range of addresses in the Windows kernel32.dll library. This includes details such as the base address, size, and protection status of each allocated memory section.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used by an attacker for reconnaissance purposes in order to gather information about the system's memory layout and identify potential areas for exploitation. It could also be used as part of an evasion technique to hide malicious code within legitimate system processes.
+"
+kernel32.dll,VirtualQueryEx,"The purpose of this API is to retrieve information about a specified memory region in the virtual address space of a process. This can include details such as the base address, size, and protection attributes of the memory region.
+
+There is no specific MITRE ATT&CK technique directly associated with this API. However, it could potentially be used as part of techniques such as Process Injection (T1055) or Execution through API (T1106).
+"
+kernel32.dll,Sleep,"The purpose of this API is to pause the execution of a thread or process for a specified amount of time. This can be used for various purposes such as timing, synchronization, and resource management.
+
+There is no specific MITRE ATT&CK technique associated with 'kernel32.dll': 'Sleep'. However, it could potentially be used in conjunction with other techniques such as Process Injection (T1055) or Execution through API (T1106).
+"
+kernel32.dll,EnterCriticalSection,"The purpose of this API is to manage critical sections in a multi-threaded environment on the Windows operating system. It allows for synchronization between threads to prevent conflicts when accessing shared resources.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of defense evasion or privilege escalation techniques by malicious actors.
+"
+kernel32.dll,SetFilePointer,"The purpose of this API is to set the file pointer for a specified file. This can be used to move the current position within a file, which may be useful for reading or writing data at specific locations.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used as part of an adversary's tactics related to persistence (e.g. modifying a critical system file) or defense evasion (e.g. hiding malicious code within a legitimate file).
+"
+kernel32.dll,LoadResource,"The purpose of this API is to load a resource from a specified module, such as an executable file or DLL. This can be useful for accessing data or code stored within the module.
+
+There is not necessarily a specific MITRE ATT&CK technique associated with this API, as it is just one function within the larger kernel32.dll library. However, it could potentially be used in techniques related to code execution (such as DLL side-loading) or defense evasion (such as hiding malicious code within legitimate resources).
+"
+kernel32.dll,SuspendThread,"The purpose of this API is to pause or suspend a thread in a Windows operating system. This can be used by developers for debugging purposes, as well as by malware authors to evade detection and prolong the execution of malicious code.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques such as Process Injection (T1055) or Thread Execution Hijacking (T1050).
+"
+kernel32.dll,GetTickCount,"The purpose of this API is to retrieve the number of milliseconds that have elapsed since the system was started. This information can be used for various purposes, such as measuring time intervals or determining system uptime.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in conjunction with other techniques, such as obtaining system information (T1082) or performing reconnaissance (T1033).
+"
+kernel32.dll,GetFileSize,"The purpose of this API is to retrieve the size of a specified file in bytes. It is commonly used by software applications to determine the amount of data contained within a file.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is simply a standard function within the kernel32.dll library that can be used for legitimate purposes. However, an attacker may potentially use this API as part of their reconnaissance phase in order to gather information about files on a system or to determine if certain files are present before proceeding with an attack.
+"
+kernel32.dll,GetStartupInfoW,"The purpose of this API is to retrieve information about the current process and system at startup, such as command-line arguments and environment variables. It is typically used by developers to customize the behavior of their applications based on this information.
+
+There are multiple MITRE ATT&CK techniques associated with 'kernel32.dll:GetStartupInfoW', including T1087 (Account Discovery), T1003 (Credential Dumping), and T1033 (System Owner/User Discovery). This API can be leveraged by threat actors to gather sensitive information about the system and potentially aid in lateral movement or privilege escalation.
+"
+kernel32.dll,GetFileAttributesW,"The purpose of this API is to retrieve the attributes of a specified file. This can include information such as whether the file exists, its size, and when it was last modified.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used by an attacker for reconnaissance or to gather information about a target system before launching an attack.
+"
+kernel32.dll,InitializeCriticalSection,"The purpose of this API is to initialize a critical section object, which allows for synchronization between multiple threads accessing the same resource. This can help prevent race conditions and ensure proper handling of shared resources.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is just one small part of overall thread synchronization techniques used in operating systems. However, it could potentially be used as part of defense evasion tactics by malicious actors to delay or disrupt detection by security tools.
+"
+kernel32.dll,GetThreadPriority,"The purpose of this API is to retrieve the priority level of a specific thread within a process. It can be used for managing system resources and determining which processes or threads should have higher priority over others.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a standard Windows function that does not necessarily have malicious intent. However, it could potentially be used by an attacker to manipulate the priority levels of certain processes in order to disrupt system performance or gain elevated privileges.
+"
+kernel32.dll,SetThreadPriority,"The purpose of this API is to set the priority level for a specific thread in a Windows process. This can be used to adjust the amount of processing time that a particular thread receives, which can affect the overall performance and responsiveness of an application.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used as part of privilege escalation or process injection techniques such as ""Process Injection: Dynamic-link Library Injection"" (T1055) or ""Privilege Escalation: Process Injection"" (T1055).
+"
+kernel32.dll,GetCurrentProcess,"The purpose of this API is to retrieve a handle to the current process, allowing for manipulation or information gathering about the process. This can be used by programs for various purposes such as debugging, monitoring resource usage, or managing system resources.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in conjunction with other techniques such as Process Injection (T1055) or System Information Discovery (T1082).
+"
+kernel32.dll,VirtualAlloc,"The purpose of this API is to allocate a block of memory in the virtual address space of a process. This can be used for various purposes such as creating dynamic data structures, implementing custom memory management, and loading code at runtime.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it can potentially be used by attackers for process injection or executing malicious code in the context of another process, which could fall under MITRE ATT&CK techniques such as ""Process Injection"" (T1055) or ""DLL Search Order Hijacking"" (T1038).
+"
+kernel32.dll,GetSystemInfo,"The purpose of this API is to retrieve information about the system's hardware and operating system. This includes details such as processor type, number of processors, memory size, and operating system version.
+
+There is not a specific MITRE ATT&CK technique associated with this API. However, it could potentially be used by an attacker for reconnaissance or gathering information about a target system in preparation for an attack.
+"
+kernel32.dll,GetCommandLineW,"The purpose of this API is to retrieve the command line arguments used to launch a specific process in Windows operating systems. This information can be used for troubleshooting, debugging, and other system management purposes.
+
+There is no specific MITRE ATT&CK technique associated with this API alone. However, it can be used as part of a larger attack technique such as Process Injection (T1055) or Execution through API (T1106).
+"
+kernel32.dll,LeaveCriticalSection,"The purpose of this API is to release a critical section object that was previously entered with the EnterCriticalSection function. This allows other threads to enter the same critical section and access shared resources.
+
+This API is associated with MITRE ATT&CK technique T1055 - Process Injection, as it can be used by malicious actors to inject code into legitimate processes in order to evade detection and gain persistence on a compromised system.
+"
+kernel32.dll,GetProcAddress,"The purpose of this API is to retrieve the address of a specified function from the kernel32.dll library. This allows applications to dynamically load and call functions from the library at runtime.
+
+There is no specific MITRE ATT&CK technique associated with 'GetProcAddress', as it is a legitimate Windows API used for software development. However, attackers may abuse this API in order to hide malicious code and evade detection by security tools.
+"
+kernel32.dll,ResumeThread,"The purpose of this API is to resume a thread that has been suspended by calling the ""SuspendThread"" function. This allows the thread to continue executing.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it can potentially be used in various techniques such as Process Injection (T1055) or Execution through API (T1106).
+"
+kernel32.dll,GetVersionExW,"The purpose of this API is to retrieve information about the operating system version. It is used by applications to determine compatibility with specific versions of Windows and to perform certain operations based on the OS version. There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques for reconnaissance or gathering system information.
+"
+kernel32.dll,VerifyVersionInfoW,"The purpose of this API is to check the version information of the kernel32.dll file. This can be used for compatibility checks and determining which features or functions are available on a particular system.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is primarily used for system administration purposes rather than for malicious activities. However, an attacker could potentially use this API to gather information about the target system's operating system and make decisions about which exploits or malware to deploy based on that information. This could fall under the ""System Information Discovery"" technique in the Initial Access phase of an attack.
+"
+kernel32.dll,HeapCreate,"The purpose of this API is to create a private heap, which is a memory space that can be used for dynamic memory allocation within a process. This allows the process to have its own isolated memory space, separate from other processes.
+
+There is not a specific MITRE ATT&CK technique associated with this API as it does not directly relate to any malicious or adversarial actions. However, it could potentially be leveraged by an attacker as part of their tactics and techniques in order to allocate and manipulate memory within a process. For example, an attacker may use HeapCreate in combination with other APIs to perform buffer overflow attacks or exploit vulnerabilities in software.
+"
+kernel32.dll,GetWindowsDirectoryW,"The purpose of this API is to retrieve the path of the Windows directory on a computer. It is used by programs and applications to locate important system files and folders.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a legitimate function within the Windows operating system. However, this API could potentially be abused by malicious actors for persistence or evasion techniques, such as hiding malware in the Windows directory or using it to bypass security measures that monitor changes in certain directories.
+"
+kernel32.dll,VerSetConditionMask,"The purpose of this API is to set a condition mask for the version information of a file. This can be used by programs to check the version information of files and ensure compatibility with certain versions.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is not typically used in malicious activities. However, an attacker could potentially use it to gather information about the system or evade detection by manipulating version information.
+"
+kernel32.dll,GetDiskFreeSpaceW,"The purpose of this API is to retrieve information about the amount of free space on a disk drive. This can be used by applications to determine if there is enough space available for storing data.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a commonly used function in Windows operating systems and does not have any malicious intent. However, it may be used by an attacker as part of their reconnaissance process or in combination with other techniques to gather information about the target system's storage capabilities.
+"
+kernel32.dll,FindFirstFileW,"The purpose of this API is to search for the first file that matches a specified pattern in a given directory. It is commonly used by software programs to locate specific files on a system.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it can be used for legitimate purposes and does not necessarily indicate malicious activity. However, it could potentially be leveraged by an attacker as part of reconnaissance or information gathering techniques.
+"
+kernel32.dll,GetUserDefaultUILanguage,"The purpose of this API is to retrieve the default user interface language for an application. It allows applications to determine the language settings of the current user and display content in that language.
+
+There is a MITRE ATT&CK technique associated with this API, specifically T1055 - Process Injection. This technique involves injecting malicious code into a legitimate process, such as kernel32.dll, in order to evade detection and gain elevated privileges on a system. The GetUserDefaultUILanguage function can be used as part of process injection techniques to manipulate language settings and potentially bypass security measures.
+"
+kernel32.dll,lstrlenW,"The purpose of this API is to retrieve the length of a string in a Windows application. It is commonly used in programming languages such as C and C++.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common system call that can be used for various purposes and does not necessarily indicate malicious behavior. However, this API could potentially be used by an attacker for information gathering or manipulating strings within a program, which could align with techniques such as T1005 (Data from Local System) or T1059 (Command-Line Interface).
+"
+kernel32.dll,QueryPerformanceCounter,"The purpose of this API is to obtain high-resolution performance counter data for benchmarking and profiling purposes. It allows developers to accurately measure the time it takes for their code to execute.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a low-level Windows function that can be used by various applications and tools. However, it could potentially be used in techniques related to timing and synchronization, such as T1040 (Network Sniffing) or T1123 (Audio Capture).
+"
+kernel32.dll,SetEndOfFile,"The purpose of this API is to set the end of a file, essentially truncating it at a specified position. This can be used for various purposes such as creating sparse files or resizing existing files.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common function used in many different types of software and does not necessarily have malicious intent. However, it could potentially be used by an attacker to manipulate file sizes or hide data within a file.
+"
+kernel32.dll,HeapFree,"The purpose of this API is to free a block of memory allocated by the HeapAlloc function in the kernel32.dll library. It is used to manage dynamic memory allocation in Windows systems.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it can potentially be used for heap spraying attacks, which fall under the T1105 - Remote File Copy technique.
+"
+kernel32.dll,WideCharToMultiByte,"The purpose of this API is to convert wide characters (Unicode) to multi-byte characters (such as ASCII). This can be useful for applications that need to process text in different character encodings. 
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used by an attacker for code execution or data exfiltration if they are able to manipulate the input or output of the conversion process.
+"
+kernel32.dll,FindClose,"The purpose of this API is to close a file search handle that was previously opened with the 'FindFirstFile' or 'FindNextFile' functions. This is commonly used in programming languages to manage files and directories.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it does not have any malicious intent on its own. However, it may be used by attackers as part of their tactics, such as closing file handles after accessing sensitive files or hiding their presence on a system by closing open handles before they can be detected.
+"
+kernel32.dll,MultiByteToWideChar,"The purpose of this API is to convert multi-byte characters into wide characters, which are used in Unicode encoding. This allows for compatibility with different character sets and languages. 
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in various techniques related to code execution or defense evasion by converting strings to a different format that may bypass certain security measures.
+"
+kernel32.dll,LoadLibraryW,"The purpose of this API is to load a specified dynamic-link library (DLL) into the memory space of a calling process. This allows the process to access functions and data contained within the DLL.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common and legitimate function used by many applications and operating systems. However, it could potentially be used by an attacker as part of various techniques such as code injection or DLL hijacking.
+"
+kernel32.dll,SetEvent,"The purpose of this API is to set an event object, which allows synchronization and communication between threads in a multi-threaded program. This can be useful for coordinating actions or sharing resources among multiple threads.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a general functionality provided by the Windows kernel32.dll library. However, it could potentially be used as part of techniques such as Process Injection (T1055) or Thread Execution Hijacking (T1050) if malicious code uses the SetEvent function to manipulate thread execution or inject itself into a legitimate process.
+"
+kernel32.dll,CreateFileW,"The purpose of this API is to create a new file or open an existing one. It is used by software applications to interact with files on the Windows operating system.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common function used for general file operations and not specific to any particular attack tactic or technique. However, it can potentially be leveraged by attackers for various purposes such as creating malicious files, modifying existing files, or exfiltrating data from a compromised system. Therefore, monitoring the use of this API can help in detecting suspicious activity and potential attacks.
+"
+kernel32.dll,GetLocaleInfoW,"The purpose of this API is to retrieve information about the locale settings on a Windows operating system. This can include language, currency, date and time formats, and other regional settings.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a legitimate function within the Windows kernel32.dll library. However, it could potentially be used by an attacker for reconnaissance purposes in order to gather information about the target system's regional settings.
+"
+kernel32.dll,GetSystemDirectoryW,"The purpose of this API is to retrieve the path of the system directory on a Windows operating system. It is used by applications and programs to access important system files and resources.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques such as ""System Information Discovery"" or ""File and Directory Discovery"".
+"
+kernel32.dll,DeleteFileW,"The purpose of this API is to delete a file in the Windows operating system. It is commonly used by software programs to remove temporary or unnecessary files.
+
+There is no specific MITRE ATT&CK technique associated with 'kernel32.dll' and 'DeleteFileW'. However, it could potentially be used as part of other techniques such as File Deletion (T1107) or Execution through API (T1124).
+"
+kernel32.dll,GetLocalTime,"The purpose of this API is to retrieve the current local time from the system. This can be used for various applications such as logging, scheduling tasks, and displaying accurate timestamps.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it may be used in conjunction with other techniques that involve manipulating or gathering information about system time. For example, an attacker may use this API to gather information about a victim's system and plan their attack accordingly.
+"
+kernel32.dll,GetEnvironmentVariableW,"The purpose of this API is to retrieve the value of an environment variable from the operating system. This can be used by programs to access information such as file paths, user names, and other system-specific settings.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in conjunction with other techniques for reconnaissance or credential access. For example, an attacker may use this API to gather information about a target's system and use that information to craft a more targeted attack.
+"
+kernel32.dll,WaitForSingleObject,"The purpose of this API is to wait for a single object to become signaled before continuing the execution of a program. This can be used for synchronization and coordination between multiple threads or processes.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common function used in Windows operating systems. However, it could potentially be used by an attacker for process injection or privilege escalation techniques.
+"
+kernel32.dll,WriteFile,"The purpose of this API is to write data to a file in the Windows operating system. This can be used by programs or applications to save information or create new files.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common and essential function for writing data in the Windows environment. However, an attacker could potentially use this API as part of a larger attack strategy, such as creating malicious files on a victim's computer.
+"
+kernel32.dll,ExitThread,"The purpose of this API, 'kernel32.dll': 'ExitThread', is to terminate a thread in a Windows operating system. It is associated with the MITRE ATT&CK technique T1187 - Forced Authentication, as it can be used by attackers to force a user to log off or shut down their system, potentially causing data loss or disruption.
+"
+kernel32.dll,DeleteCriticalSection,"The purpose of this API is to allow for the deletion of a critical section, which is a synchronization object used to control access to shared resources in multithreaded applications. This allows for proper management and protection of these shared resources.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a basic function commonly used in Windows operating systems. However, it could potentially be utilized by an attacker as part of privilege escalation techniques or tampering with system processes.
+"
+kernel32.dll,TlsGetValue,"The purpose of this API is to retrieve the value of a thread-local storage variable in the kernel32.dll library. This can be used by programs to access information specific to each individual thread, such as error codes or user-defined data.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques for privilege escalation, credential theft, or lateral movement.
+"
+kernel32.dll,GetDateFormatW,"The purpose of this API is to retrieve the current system date in a specific format. It is associated with MITRE ATT&CK technique T1059 - Command and Scripting Interpreter, as it allows an attacker to execute commands or scripts on a compromised system.
+"
+kernel32.dll,SetErrorMode,"The purpose of this API is to set the error mode for a process. This allows the developer to control how errors are handled within their program.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques such as Process Injection (T1055) or Execution through API (T1106).
+"
+kernel32.dll,IsValidLocale,"The purpose of this API is to validate a locale identifier, which is used to identify a specific language or cultural setting in an operating system. This can be useful for ensuring that the correct language and formatting settings are applied when working with different locales.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is not typically used for malicious purposes. However, it could potentially be leveraged by an attacker for reconnaissance or information gathering in order to determine the default locale on a victim's system.
+"
+kernel32.dll,TlsSetValue,"The purpose of this API is to set the value for a thread local storage (TLS) variable in the kernel32.dll library. This allows for efficient and secure access to data that is specific to each thread within a process.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of other techniques such as Process Injection or DLL Search Order Hijacking.
+"
+kernel32.dll,CreateDirectoryW,"The purpose of this API is to create a new directory within the Windows operating system. It is commonly used by software programs to organize files and folders.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it can be used for legitimate purposes. However, it could potentially be used by threat actors as part of lateral movement or file manipulation techniques in an attack.
+"
+kernel32.dll,GetSystemDefaultUILanguage,"The purpose of this API is to retrieve the default user interface language for the current system. There is no specific MITRE ATT&CK technique associated with this API, as it is a commonly used function in Windows systems and does not have any malicious intent on its own. However, it can potentially be used by attackers as part of their tactics to gather information about a targeted system or to change the language settings in order to evade detection.
+"
+kernel32.dll,EnumCalendarInfoW,"The purpose of this API is to retrieve information about calendar settings for a specific locale. It is associated with the MITRE ATT&CK technique ""System Information Discovery"" as it can be used by an attacker to gather system information such as time zone and language settings, which can aid in further attacks.
+"
+kernel32.dll,LocalAlloc,"The purpose of this API is to allocate a block of memory in the local process. It is commonly used by programs to dynamically allocate memory for storing data or executing code.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it can be used as part of various techniques such as Process Injection (T1055) or Dynamic Linker Hijacking (T1574).
+"
+kernel32.dll,GetUserDefaultLangID,"The purpose of this API is to retrieve the language identifier for the current user's default UI language. This can be used by applications to determine which language resources to use for displaying text and other user interface elements.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in social engineering attacks or to gather information about a target system's language settings.
+"
+kernel32.dll,RemoveDirectoryW,"The purpose of this API is to remove a directory from the file system. It is associated with MITRE ATT&CK technique T1106: Native API because it allows an attacker to manipulate the file system using native Windows APIs, potentially allowing them to hide or delete files.
+"
+kernel32.dll,CreateEventW,"The purpose of this API is to create a new event object. This can be used for synchronization between different threads or processes in a Windows operating system.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a common function that can be used for various purposes and does not necessarily indicate malicious activity. However, it could potentially be used by an attacker as part of techniques such as Process Injection or Privilege Escalation.
+"
+kernel32.dll,SetThreadLocale,"The purpose of this API is to set the locale for a specific thread in a Windows application. This allows the application to handle language and cultural differences for different threads within the same process. 
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a legitimate system function used for localization purposes. However, it could potentially be abused by an attacker to manipulate or bypass language-based security controls.
+"
+kernel32.dll,GetThreadLocale,"The purpose of this API is to retrieve the locale identifier for the current thread. This allows applications to determine the language and cultural conventions used by the user's operating system. 
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a legitimate Windows function that does not pose any security risk or vulnerability. However, adversaries may potentially use this API in conjunction with other techniques for reconnaissance purposes, such as determining the language settings of a victim's system.
+"
+comctl32.dll,InitCommonControls,"The purpose of this API is to initialize the common controls for user interface elements in Windows applications. This includes buttons, menus, toolbars, and other graphical components.
+
+There is not a specific MITRE ATT&CK technique associated with this API. However, it could potentially be used as part of an attack targeting the user interface or GUI functionality of an application. For example, an attacker could use this API to manipulate or control the appearance or behavior of certain UI elements in order to deceive or trick a user into taking malicious actions.
+"
+version.dll,GetFileVersionInfoSizeW,"The purpose of this API is to retrieve the size of version information for a specified file. This can be used for various purposes, such as checking the version of a file before performing an update or determining if certain features are available.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is just one small component that could potentially be used in a larger attack. However, it may be relevant in techniques related to gathering information about files on a system (such as T1083 - File and Directory Discovery) or manipulating files (such as T1105 - Inhibit System Recovery).
+"
+version.dll,VerQueryValueW,"The purpose of this API is to retrieve version information from a specified file or resource. It can be used to identify the version number, company name, product name, and other details about a particular file.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a general-purpose function that can be used for various purposes such as software development, system administration, and malware analysis. However, it may be used by attackers in techniques related to identifying system information or gathering intelligence on the victim's machine.
+"
+version.dll,GetFileVersionInfoW,"The purpose of this API is to retrieve information about the version of a specific file. This can be useful for software developers and system administrators who need to keep track of different versions of files in their systems.
+
+There is not a specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of an adversary's reconnaissance or discovery phase when gathering information about a target system. It may also be used for file manipulation or persistence techniques.
+"
+user32.dll,CreateWindowExW,"The purpose of this API is to create a new window in a graphical user interface (GUI) application. It allows developers to specify the style, size, position, and other attributes of the window being created.
+
+There is not a specific MITRE ATT&CK technique associated with this API. However, it could potentially be used by an attacker as part of techniques such as User Interface Spoofing or Exploitation for Client Execution.
+"
+user32.dll,TranslateMessage,"The purpose of this API is to translate virtual key messages into character messages. This allows applications to receive and process keyboard input from the user.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a standard Windows API used for user interface interactions. However, it can potentially be leveraged by attackers for keylogging or other types of malicious activities.
+"
+user32.dll,CharLowerBuffW,"The purpose of this API is to convert a string to lowercase characters. This can be useful for various text manipulation tasks, such as sorting or comparison.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a commonly used function in the Windows User32 dynamic link library (DLL). However, it could potentially be used by an attacker for obfuscation purposes, such as disguising malicious code or filenames.
+"
+user32.dll,CallWindowProcW,"The purpose of this API is to call a window procedure for a specified window and pass any relevant messages to it. This can be used for various tasks such as handling user input, updating the appearance of windows, or responding to system events.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it may be used in conjunction with other techniques such as User Execution (T1204) or Windows Management Instrumentation (T1047) to execute malicious code or manipulate the behavior of a running process on a system.
+"
+user32.dll,CharUpperW,"The purpose of this API is to convert lowercase letters in a string to uppercase using the user32.dll library. This can be useful for applications that require consistent capitalization, such as sorting or searching through text data.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a common function used in many different types of software and does not have any inherent security implications. However, it could potentially be used by an attacker as part of obfuscation techniques to hide malicious code within legitimate processes.
+"
+user32.dll,PeekMessageW,"The purpose of this API is to retrieve the next message from the thread's message queue and remove it from the queue. This allows an application to handle user input, such as mouse clicks or keyboard presses.
+
+There is not a specific MITRE ATT&CK technique associated with this API. However, it could potentially be used in conjunction with other techniques for keylogging (such as T1056 - Input Capture) or user interface spoofing (such as T1497 - Virtualization/Sandbox Evasion).
+"
+user32.dll,GetSystemMetrics,"The purpose of this API is to retrieve information about the system's current configuration, such as screen resolution and mouse settings. It can also be used to determine if a user is currently logged in or if the system is in a locked state.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used for reconnaissance (T1087) or credential access (T1003).
+"
+user32.dll,SetWindowLongW,"The purpose of this API is to set the attributes of a window in the user interface, such as its size, position, and style. It allows for customization and control over how windows are displayed on a computer screen.
+
+There is no specific MITRE ATT&CK technique associated with this API. However, it can be used by attackers for various techniques such as privilege escalation or persistence by modifying the properties of a window to bypass security measures or maintain access to a system. Therefore, it may be referenced in some MITRE ATT&CK tactics like Defense Evasion or Persistence.
+"
+user32.dll,MessageBoxW,"The purpose of this API is to display a message box on the screen using the user32.dll library. This can be used for various purposes such as displaying error messages or prompting users for input.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a commonly used function in Windows operating systems and does not necessarily have malicious intent. However, it could potentially be used by an attacker as part of their tactics, techniques, and procedures (TTPs) in order to display fake error messages or trick users into providing sensitive information.
+"
+user32.dll,DestroyWindow,"The purpose of this API is to destroy a specified window in the user interface. It is used by developers to remove windows from the screen and free up system resources.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of an attacker's tactic for evading detection or hindering analysis by destroying any windows that may contain evidence of malicious activity.
+"
+user32.dll,CharUpperBuffW,"The purpose of this API is to convert a string to uppercase letters. It is used in Windows operating systems for Unicode character manipulation.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used by an attacker in techniques such as ""Input Capture"" or ""Credential Dumping"" if they were trying to manipulate user input or obtain sensitive information from the system.
+"
+user32.dll,CharNextW,"The purpose of this API is to return the next character in a string given a starting position. It is commonly used in Windows programming for manipulating strings. 
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is not directly related to cyber attacks or security vulnerabilities. However, it could potentially be used by attackers as part of string manipulation techniques in order to evade detection or hide malicious code within strings.
+"
+user32.dll,MsgWaitForMultipleObjects,"The purpose of this API is to wait for multiple objects or events before continuing with the execution of a program. This can be used in multitasking environments where a program needs to pause and wait for certain conditions to be met before proceeding.
+
+There is not necessarily a specific MITRE ATT&CK technique associated with this API, as it is commonly used by legitimate programs and does not have any malicious intent on its own. However, it could potentially be leveraged by an attacker as part of their tactics, techniques, and procedures (TTPs) in order to delay detection or evade security measures.
+"
+user32.dll,LoadStringW,"The purpose of this API is to load a string resource from the user32.dll library. This can be used for displaying messages, prompts, and other user interface elements in Windows applications.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a commonly used function within the Windows operating system. However, it could potentially be used by an attacker to display deceptive or malicious messages to trick users into taking actions that could compromise their system.
+"
+user32.dll,ExitWindowsEx,"The purpose of this API is to exit or shut down a Windows system. There are several possible MITRE ATT&CK techniques that could be associated with this API, depending on the specific use case and context. Some possible techniques include:
+
+- System Shutdown/Reboot: This technique involves shutting down or rebooting a system in order to disrupt its normal operations or gain persistence.
+- User Execution: This technique involves tricking or persuading a user into executing an attacker-controlled file, such as a script that uses the 'ExitWindowsEx' function.
+- Persistence: By using the 'ExitWindowsEx' function, an attacker could potentially create persistent access to a compromised system by configuring it to automatically shut down and restart at certain intervals.
+
+Ultimately, the specific MITRE ATT&CK technique associated with this API would depend on how it is used within a particular attack scenario.
+"
+user32.dll,DispatchMessageW,"The purpose of this API is to handle window messages in the Microsoft Windows operating system. It is used to process and dispatch messages sent by applications to windows, controls, or other message queues.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a fundamental component of the Windows operating system and does not have any inherent malicious capabilities. However, it can be leveraged by attackers as part of techniques such as User Execution (T1204) or Process Injection (T1055).
+"
+oleaut32.dll,SysAllocStringLen,"The purpose of this API is to allocate a string of a specified length in memory. It is typically used in Windows programming for manipulating strings.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used as part of an attack using the ""Process Injection"" or ""Code Signing"" techniques. For example, an attacker may use this API to allocate and inject malicious code into a legitimate process, allowing them to bypass security measures that check for known malicious processes or files.
+"
+oleaut32.dll,SafeArrayPtrOfIndex,"The purpose of this API is to provide functions for manipulating and managing SafeArrays, which are data structures used in Microsoft Windows programming. There is no specific MITRE ATT&CK technique associated with this particular API, as it is a general-purpose library used for various tasks in Windows programming. However, the use of SafeArrayPtrOfIndex could potentially be leveraged by an attacker as part of a larger technique such as Process Injection or DLL Search Order Hijacking.
+"
+oleaut32.dll,VariantCopy,"The purpose of this API is to copy data between two VARIANT structures. This can be used in various programming languages, such as Visual Basic and C++, for manipulating data stored in these structures.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a commonly used function within the Windows operating system. However, it could potentially be utilized by an attacker for code execution or privilege escalation if they were able to manipulate the data being copied.
+"
+oleaut32.dll,SafeArrayGetLBound,"The purpose of this API is to retrieve the lower bound for one dimension of a SafeArray. It is commonly used in Windows programming. 
+
+There is no specific MITRE ATT&CK technique associated with this API, as it does not directly relate to any malicious tactics or techniques. However, it could potentially be used by an attacker in combination with other techniques to manipulate memory and evade detection on a compromised system.
+"
+oleaut32.dll,SafeArrayGetUBound,"The purpose of this API is to retrieve the upper bound of a SafeArray data structure in Microsoft Windows. It is used for handling arrays and structured data within applications.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is not inherently malicious or used for exploitation. However, it may be utilized by attackers as part of a larger attack chain or tactic. For example, an attacker could use this API to manipulate array structures in memory in order to bypass security checks and potentially execute arbitrary code.
+"
+oleaut32.dll,VariantInit,"The purpose of this API is to initialize a VARIANT data type in the Windows operating system. This data type is used for storing and manipulating different types of data, such as integers, strings, and objects.
+
+There is not a specific MITRE ATT&CK technique associated with this API. However, it could potentially be used by an attacker for privilege escalation or code execution if they are able to manipulate the VARIANT data type in a vulnerable application.
+"
+oleaut32.dll,VariantClear,"The purpose of this API is to clear a VARIANT data type in the Windows operating system. This allows for the release of any resources associated with the variable and resets it to its default state.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it is a standard function within the oleaut32.dll library used by many applications on Windows systems. However, it could potentially be used by an attacker as part of techniques such as Process Injection or DLL Search Order Hijacking to manipulate variables and evade detection.
+"
+oleaut32.dll,SysFreeString,"The purpose of this API is to free a string allocated by the 'SysAllocString' function in the Windows operating system. This is used for manipulating and managing strings in applications written in languages such as C++ and Visual Basic.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it can potentially be used by attackers as part of their techniques for privilege escalation or code execution. For example, an attacker could use this API to manipulate strings within memory in order to bypass security controls or inject malicious code into a process.
+"
+oleaut32.dll,SysReAllocStringLen,"The purpose of this API is to allocate and reallocate memory for a string in the Windows operating system. It is commonly used by software developers to manage strings in their programs.
+
+There is not a specific MITRE ATT&CK technique associated with this API, as it is a standard function used for memory management and does not have any malicious intent. However, an attacker could potentially use this API as part of an exploit or attack on a vulnerable program that uses it.
+"
+oleaut32.dll,VariantChangeType,"The purpose of this API is to convert data from one variant type to another in the Windows operating system. This can be used for various purposes such as converting strings to numbers or changing the format of a date.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used by an attacker for code injection or privilege escalation if they are able to manipulate the data being converted.
+"
+oleaut32.dll,SafeArrayCreate,"The purpose of this API is to create a safe array, which is a data structure used for storing and manipulating arrays in Microsoft Windows. This API allows developers to allocate memory for an array and initialize it with specified values.
+
+There is not a specific MITRE ATT&CK technique associated with 'SafeArrayCreate', as it is simply a function within the b'oleaut32.dll' library. However, this API could potentially be used by attackers in techniques such as Exploitation for Client Execution (T1203) or Scripting (T1064) if they are able to manipulate the safe array creation process in order to execute malicious code.
+"
+netapi32.dll,NetWkstaGetInfo,"The purpose of this API is to retrieve information about the network workstations in a Windows environment. This can include details such as computer name, operating system version, and domain membership. 
+
+There is not a specific MITRE ATT&CK technique associated with this API, however it could potentially be used by an attacker for reconnaissance or gathering information about potential targets on the network.
+"
+netapi32.dll,NetApiBufferFree,"The purpose of this API is to free a buffer allocated by the NetApiBufferAllocate function in the b'netapi32.dll' library. This API is associated with the MITRE ATT&CK technique ""Execution through API"" as it can be used by an attacker to execute malicious code or commands on a target system.
+"
+advapi32.dll,RegQueryValueExW,"The purpose of this API is to retrieve a specific value from the Windows registry using the Advapi32.dll library. This can be used for various purposes such as retrieving system information, checking configuration settings, or modifying registry values.
+
+There is no specific MITRE ATT&CK technique associated with this API as it is a general function that can be used by legitimate programs and malicious actors alike. However, it could potentially be used in techniques related to Persistence, Privilege Escalation, or Execution depending on how it is utilized.
+"
+advapi32.dll,AdjustTokenPrivileges,"The purpose of the 'b'advapi32.dll': b'AdjustTokenPrivileges'' API is to enable a process to adjust the privileges associated with a specified access token. This allows the process to perform actions that require higher levels of privilege, such as accessing system resources or performing administrative tasks.
+
+Yes, there is an associated MITRE ATT&CK technique: T1134 - Access Token Manipulation. This technique involves manipulating access tokens in order to bypass security controls and gain elevated privileges on a system. The AdjustTokenPrivileges API can be used by attackers for this purpose, making it a key component of this technique.
+"
+advapi32.dll,LookupPrivilegeValueW,"The purpose of this API is to look up the value of a specific privilege for a given user or group. This could be used in various security and administrative tasks, such as checking if a user has the necessary privileges to perform certain actions.
+
+There is no specific MITRE ATT&CK technique associated with this API, but it could potentially be used in conjunction with other techniques related to privilege escalation or lateral movement.
+"
+advapi32.dll,RegCloseKey,"The purpose of this API is to close a handle to a registry key in the Windows operating system. It is used for managing and manipulating settings, configurations, and other information stored in the Windows registry.
+
+There is not a specific MITRE ATT&CK technique associated with this API as it can be used for various purposes and may be called by different programs or malware. However, it could potentially be used as part of techniques such as Registry Run Keys / Start Folder (T1060) or System Services (T1050) which involve modifying the Windows registry to persist on a system or achieve persistence through service execution.
+"
+advapi32.dll,OpenProcessToken,"The purpose of this API is to open the access token associated with a specified process. This allows for manipulation of security settings and privileges for that process.
+
+There is no specific MITRE ATT&CK technique associated with this API, as it can be used for various purposes such as privilege escalation or bypassing security measures. However, it could potentially be used in techniques such as ""Process Injection"" (T1055) or ""Bypass User Account Control"" (T1088).
+"
+advapi32.dll,RegOpenKeyExW,"The purpose of this API is to open a registry key in the Windows operating system. It is part of the Win32 API and is used for managing and accessing the Windows registry, which stores configuration settings and information about installed applications.
+
+There are several MITRE ATT&CK techniques associated with this API, including:
+
+1. Registry Run Keys / Startup Folder (T1060): This technique involves adding a new entry to certain registry keys or startup folders that will execute when the user logs on or the system starts up.
+
+2. Process Injection (T1055): This technique involves injecting malicious code into running processes in order to evade detection and gain access to sensitive areas of the system.
+
+3. System Services (T1031): This technique involves manipulating or creating system services using APIs like RegOpenKeyExW in order to maintain persistence on a compromised system.
+
+4. Query Registry (T1012): This technique involves querying specific values from the registry using APIs like RegOpenKeyExW in order to gather information about a target system.
+
+Overall, this API can be used by attackers for various purposes such as establishing persistence, executing code, gathering information, etc., making it an important component of many different attack techniques.
+"

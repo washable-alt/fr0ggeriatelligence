@@ -1,0 +1,5 @@
+openai
+pefile
+tqdm
+prettytable
+python-dotenv
